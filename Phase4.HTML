@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Water management (IOT)</title>
+
+    <style>
+        body{
+            background-color:blue;
+            font-family: Georgia, serif;
+            
+        }
+        table, th, td {
+          border:3px solid blue;
+          text-align: center;
+          border-collapse: collapse;
+          padding: 8px;
+        
+        }
+        th {
+  background-color: #04AA6D;
+  color: white;
+}
+        tr:nth-child(even){background-color: #c3b9b9}
+        tr:nth-child(odd){background-color: #c3b9b9}
+
+
+.button {
+  background-color: #ff0000;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #ff0000;
+}
+
+.button1:hover {
+  background-color: #ff0000;
+  color: white;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #ff0000;
+}
+
+.button2:hover {
+  background-color: #ff0000;
+  color: white;
+}
+
+.button3 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #f44336;
+}
+
+.button3:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+#borderimg { 
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(https://www.w3schools.com/css/border.png) 30 round;
+}
+        </style>
+        
+</head>
+<body>
+
+<h1 id="borderimg" style="background: whitesmoke; text-align: center; color: rgb(162, 0, 255);">Smart Water management (IOT)</h1>
+
+    <table style="width:100%">
+        <tr>
+          <th>Soil Moisture</th>
+          <th>Temperature </th>
+          <th>Air Humidity </th>
+        </tr>
+        <tr>
+          <td>
+            <p>I'm thinking of a letter. Guess which: a, b, c, d or e?</p>
+            <img src="https://i0.wp.com/www.circuituncle.com/wp-content/uploads/2019/10/moisture_sensor.png?fit=640%2C480&ssl=1"  width="200px" height="200"><br>
+            <input id="myInput1"style="border-color: #04AA6D; border-width: 10px;"  type="number">
+            <p id="demo1"></p>
+           </td>
+    
+          <td>
+             <p>I'm thinking of a letter. Guess which: a, b, c, d or e?</p>
+             <img src="https://www.solaredge.com/sites/master/files/styles/tiny_convert/public/Webpages/Products/Metering%20%26%20Sensors/Component-2-Environmental-sensors-1600x1200.png?itok=L5n9gGU1"  width="200px" height="200"><br>
+             <input id="myInput2" style="border-color: #04AA6D; border-width: 10px;"  type="number">     
+             <p id="demo2"></p>
+        </td>
+          <td>
+            <p>I'm thinking of a letter. Guess which: a, b, c, d or e?</p>
+            <img src="https://www.mysensors.org/uploads/57c3ec0c4d04abe84cd93e0f/image/dht11.png"  width="200px" height="200"><br>
+            <input id="myInput3" style="border-color: #04AA6D; border-width: 10px;" type="number">
+             <p id="demo3"></p>
+        </td>
+        </tr>
+        <tr>
+          <td><button onclick="myFunction1()" class="button button1">Submit Data</button></td>
+          <td><button onclick="myFunction2()" class="button button2">Submit Data</button></td>
+          <td><button onclick="myFunction3()"class="button button3">Submit Data</button></td>
+        </tr>
+      </table>
+<div1 style="color: #ffd000;">
+    <h1>
+        Soil Moisture Sensors.
+    </h1>
+    <p>This data is emitted by an analog sensor in a data interval between the value 0 and the value 1023, which is illustrated in the table, we notice that the minimum value is 314.47 and the maximum value is 987.83, so the average value is 384.5.</p>
+</div1>
+<div2 style="color: #ffd000;">
+    <h1>Envorimental Sensors.</h1>
+    <p>These data are becoming more and more important, and they have been collected thanks to a temperature sensor which presents the state of the temperature in Celsius, we see that the average temperature during these months of the collection is 26, 34 ◦C and the minimum value is 18 ◦C without forgetting the maximum value is 39 ◦C, to subsequently overcome its limits proof of expectations.</p>
+</div2>
+<div3 style="color: #ffd000;">
+    <h1>Humidity Sensors</h1>
+    <p>With the same sensor that ensured the collection of temperature values, we managed to collect humidity data, for an analysis passage of these data which is as follows: the average is 66.4%, and the minimum value is 38% and the maximum value is 81.3%, while collects the massive data pass.        
+    </p>
+</div3>
+<script>
+
+function myFunction1() {
+      var letter = document.getElementById("myInput1").value;
+      var text;
+    
+
+      if (letter<313)
+        text = "Very Low !";
+        
+       else if ( 314>letter || letter<370) 
+        text = "Minimum Value .";
+
+      
+      else if ( 371> letter || letter<390 ) 
+        text = "Average Value .";
+        
+ 
+      
+      else if ( 391>letter || letter <999 ) 
+        text = "High Value .";
+      
+      else 
+        text = "again enter the data";
+      
+      document.getElementById("demo1").innerHTML = text;
+    }
+
+    function myFunction2() {
+      var letter = document.getElementById("myInput2").value;
+      var text;
+    
+
+      if (letter<17)
+        text = "Very Low !";
+        
+       else if ( 18 >letter || letter<24) 
+        text = "Minimum Value .";
+
+      
+      else if ( 25> letter || letter<38 ) 
+        text = "Average Value .";
+        
+ 
+      
+      else if (39>letter || letter <100 ) 
+        text = "High Value .";
+      
+      else 
+        text = "again enter the data";
+      
+      document.getElementById("demo2").innerHTML = text;
+    }
+    function myFunction3() {
+      var letter = document.getElementById("myInput3").value;
+      var text;
+    
+
+      if (letter<36)
+        text = "Very Low !";
+        
+       else if ( 37 >letter || letter<63) 
+        text = "Minimum Value .";
+
+      
+      else if ( 64> letter || letter<70 ) 
+        text = "Average Value .";
+        
+ 
+      
+      else if (71>letter || letter <100 ) 
+        text = "High Value .";
+      
+      else 
+        text = "again enter the data";
+      
+      document.getElementById("demo3").innerHTML = text;
+    }
+    </script>
+    
+</body>
+</html>  
